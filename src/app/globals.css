@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #faf9f7;
+  --text: #2c2c2c;
+  --text-muted: #6b6b6b;
+  --text-faint: #9a9a9a;
+  --accent: #3d6b4f;
+  --accent-hover: #2d5a3f;
+  --link: #3d6b4f;
+  --border: #e8e6e3;
+  --surface: #f3f1ee;
+  --warm-highlight: #f9f5ef;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-text-faint: var(--text-faint);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-link: var(--link);
+  --color-border: var(--border);
+  --color-surface: var(--surface);
+  --color-warm-highlight: var(--warm-highlight);
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+::selection { background: #d4e4d9; color: var(--text); }
+
+body {
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-color: #b8d4c2;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s;
+}
+a:hover {
+  text-decoration-color: var(--accent);
+}

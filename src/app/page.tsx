@@ -244,9 +244,9 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap gap-6 mb-10">
             <a href="mailto:ananyapradhan02@gmail.com" className="text-[15px] text-sage-300 no-underline border-b border-sage-700 pb-0.5 hover:text-sage-100 hover:border-sage-500 transition-all">Email</a>
-            <a href="https://linkedin.com/in/ananya-pradhan" target="_blank" rel="noopener" className="text-[15px] text-sage-300 no-underline border-b border-sage-700 pb-0.5 hover:text-sage-100 hover:border-sage-500 transition-all">LinkedIn</a>
-            <a href="#" className="text-[15px] text-sage-300 no-underline border-b border-sage-700 pb-0.5 hover:text-sage-100 hover:border-sage-500 transition-all">Twitter / X</a>
-            <a href="#" className="text-[15px] text-sage-300 no-underline border-b border-sage-700 pb-0.5 hover:text-sage-100 hover:border-sage-500 transition-all">Substack</a>
+            <a href="https://www.linkedin.com/in/anyapradhan" target="_blank" rel="noopener" className="text-[15px] text-sage-300 no-underline border-b border-sage-700 pb-0.5 hover:text-sage-100 hover:border-sage-500 transition-all">LinkedIn</a>
+            <a href="https://x.com/ananyakin" target="_blank" rel="noopener" className="text-[15px] text-sage-300 no-underline border-b border-sage-700 pb-0.5 hover:text-sage-100 hover:border-sage-500 transition-all">Twitter / X</a>
+            <a href="https://mindmaps.substack.com/" target="_blank" rel="noopener" className="text-[15px] text-sage-300 no-underline border-b border-sage-700 pb-0.5 hover:text-sage-100 hover:border-sage-500 transition-all">Substack</a>
           </div>
           <div className="font-[family-name:var(--font-serif)] italic text-sm text-sage-500 pt-6 border-t border-sage-800">
             Mind Maps Collective — an archive in motion.

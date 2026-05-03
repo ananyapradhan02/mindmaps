@@ -4,10 +4,8 @@ import "./globals.css";
 
 const serif = localFont({
   src: [
-    { path: "../fonts/CormorantGaramond-Light.woff2", weight: "300", style: "normal" },
-    { path: "../fonts/CormorantGaramond-Regular.woff2", weight: "400", style: "normal" },
-    { path: "../fonts/CormorantGaramond-Italic.woff2", weight: "400", style: "italic" },
-    { path: "../fonts/CormorantGaramond-SemiBold.woff2", weight: "600", style: "normal" },
+    { path: "../fonts/Fraunces-Variable.woff2", style: "normal" },
+    { path: "../fonts/Fraunces-Variable-Italic.woff2", style: "italic" },
   ],
   variable: "--font-serif",
   display: "swap",
@@ -16,10 +14,10 @@ const serif = localFont({
 
 const sans = localFont({
   src: [
-    { path: "../fonts/Inter-Light.woff2", weight: "300", style: "normal" },
-    { path: "../fonts/Inter-Regular.woff2", weight: "400", style: "normal" },
-    { path: "../fonts/Inter-Medium.woff2", weight: "500", style: "normal" },
-    { path: "../fonts/Inter-SemiBold.woff2", weight: "600", style: "normal" },
+    { path: "../fonts/DMSans-Light.woff2", weight: "300", style: "normal" },
+    { path: "../fonts/DMSans-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../fonts/DMSans-Medium.woff2", weight: "500", style: "normal" },
+    { path: "../fonts/DMSans-SemiBold.woff2", weight: "600", style: "normal" },
   ],
   variable: "--font-sans",
   display: "swap",

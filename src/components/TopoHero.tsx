@@ -50,7 +50,29 @@ export default function TopoHero() {
     `;
     svg.appendChild(styleEl);
 
-    // Contour rings — living, breathing (scaled for wider viewBox)
+    // Geological color palette — sage base with warm accent strata
+    const topoColors = [
+      "#8fa47a", // sage-400 (green base)
+      "#8fa47a",
+      "#c4846c", // terracotta (dusty rose-brown)
+      "#8fa47a",
+      "#b3c0a1", // sage-300 (light green)
+      "#c49a6c", // warm ochre
+      "#8fa47a",
+      "#b88a9a", // muted dusty pink-mauve
+      "#8fa47a",
+      "#b3c0a1",
+      "#c4846c", // terracotta again
+      "#8fa47a",
+      "#a89abd", // soft lavender
+      "#8fa47a",
+      "#b3c0a1",
+      "#c49a6c", // ochre
+      "#8fa47a",
+      "#b88a9a", // dusty pink
+    ];
+
+    // Contour rings — geological strata with subtle color shifts
     for (let ring = 0; ring < 18; ring++) {
       const baseR = 4 + ring * 5.5;
       const seg = 64;
@@ -71,7 +93,7 @@ export default function TopoHero() {
       const p = document.createElementNS(ns, "path");
       p.setAttribute("d", d);
       p.setAttribute("fill", "none");
-      p.setAttribute("stroke", "var(--sage-400)");
+      p.setAttribute("stroke", topoColors[ring]);
       p.setAttribute("stroke-width", ring % 4 === 0 ? "0.3" : "0.15");
       p.setAttribute("opacity", (0.12 + (ring % 3 === 0 ? 0.08 : 0)).toString());
       p.style.animation = `gentlePulse ${6 + (ring % 4) * 2}s ease-in-out ${ring * 0.15}s infinite`;

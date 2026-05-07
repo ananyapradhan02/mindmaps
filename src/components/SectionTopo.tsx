@@ -26,11 +26,13 @@ export default function SectionTopo({ seed, dark = false }: SectionTopoProps) {
     svg.innerHTML = "";
 
     const rand = seededRandom(seed * 12345);
-    const strokeColor = dark ? "var(--sage-700)" : "var(--sage-400)";
+    const sectionColors = dark
+      ? ["var(--sage-700)", "#5a4a4a", "#4a4f5a", "var(--sage-700)", "#5a5040"]
+      : ["#8fa47a", "#c4846c", "#b88a9a", "#b3c0a1", "#c49a6c"];
     const dotColor = dark ? "var(--sage-700)" : "var(--sage-400)";
     const baseOpacity = dark ? 0.15 : 0.1;
 
-    // Contour arcs — subtle
+    // Contour arcs — subtle geological colors
     for (let i = 0; i < 5; i++) {
       const startX = rand() * 200;
       const startY = rand() * 100;
@@ -48,7 +50,7 @@ export default function SectionTopo({ seed, dark = false }: SectionTopoProps) {
       const p = document.createElementNS(ns, "path");
       p.setAttribute("d", d);
       p.setAttribute("fill", "none");
-      p.setAttribute("stroke", strokeColor);
+      p.setAttribute("stroke", sectionColors[i % sectionColors.length]);
       p.setAttribute("stroke-width", (0.1 + rand() * 0.25).toFixed(2));
       p.setAttribute("opacity", (baseOpacity * 0.7 + rand() * 0.05).toFixed(3));
       svg.appendChild(p);
@@ -112,7 +114,7 @@ export default function SectionTopo({ seed, dark = false }: SectionTopoProps) {
       const p = document.createElementNS(ns, "path");
       p.setAttribute("d", d);
       p.setAttribute("fill", "none");
-      p.setAttribute("stroke", strokeColor);
+      p.setAttribute("stroke", sectionColors[(i + 2) % sectionColors.length]);
       p.setAttribute("stroke-width", "0.15");
       p.setAttribute("opacity", (baseOpacity * 0.6).toFixed(3));
       svg.appendChild(p);

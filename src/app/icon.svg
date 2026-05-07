@@ -1,43 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-  <!-- Warm paper background -->
-  <rect width="32" height="32" rx="4" fill="#f5f0e8"/>
-
-  <!-- Folded map shape — a slightly angled rectangle with a diagonal fold -->
-  <g>
-    <!-- Map paper back panel (slightly darker, peeking behind fold) -->
-    <path d="M5 5 L20 4 L27 6 L27 27 L12 28 L5 26 Z" fill="#e8e3d8" stroke="#c4bfb0" stroke-width="0.4"/>
-
-    <!-- Fold crease shadow -->
-    <path d="M14 4.5 L18 27.5" stroke="#c4bfb0" stroke-width="0.5" opacity="0.6"/>
-
-    <!-- Map front panel (the visible folded face) -->
-    <path d="M5 5 L14 4.5 L18 27.5 L5 26 Z" fill="#f0ebe0"/>
-
-    <!-- Sage-green terrain wash on front panel -->
-    <path d="M7 10 Q9 8, 12 9 Q15 11, 14 16 Q13 20, 10 22 Q7 21, 6 17 Q6 13, 7 10 Z" fill="#b3c0a1" opacity="0.3"/>
-
-    <!-- Contour lines on front panel -->
-    <g fill="none" stroke="#6b8555" stroke-linecap="round" opacity="0.5">
-      <path d="M7 18 Q8 12, 11 10 Q13 9, 14 12" stroke-width="0.5"/>
-      <path d="M7 20 Q8.5 14, 11 12.5 Q13 12, 13.5 14" stroke-width="0.5"/>
-      <path d="M8 22 Q9 17, 11 15 Q12 14.5, 12.5 16" stroke-width="0.5"/>
-    </g>
-
-    <!-- Sage-green terrain wash on back panel -->
-    <path d="M18 10 Q20 8, 23 10 Q26 13, 25 18 Q24 22, 21 24 Q18 23, 18 18 Z" fill="#b3c0a1" opacity="0.2"/>
-
-    <!-- Contour lines on back panel -->
-    <g fill="none" stroke="#6b8555" stroke-linecap="round" opacity="0.35">
-      <path d="M19 14 Q21 10, 24 11 Q26 13, 25 16" stroke-width="0.5"/>
-      <path d="M19 17 Q21 13, 23 14 Q25 15, 24 18" stroke-width="0.5"/>
-      <path d="M20 20 Q21 17, 23 17.5" stroke-width="0.4"/>
-    </g>
-
-    <!-- Tiny peak markers -->
-    <circle cx="10" cy="16" r="0.6" fill="#3e4f32" opacity="0.5"/>
-    <circle cx="22" cy="15" r="0.5" fill="#3e4f32" opacity="0.35"/>
-
-    <!-- Fold highlight (light edge catch) -->
-    <path d="M14 4.5 L18 27.5" stroke="#faf8f5" stroke-width="0.3" opacity="0.5"/>
+  <rect width="32" height="32" rx="6" fill="#3e4f32"/>
+  <g fill="none" stroke="#d1d9c7" stroke-linecap="round">
+    <!-- outer contour -->
+    <path d="M6 20 Q8 8, 16 7 Q24 6, 26 16 Q27 22, 20 25 Q14 28, 8 24 Z" stroke-width="1.2" opacity="0.5"/>
+    <!-- middle contour -->
+    <path d="M10 19 Q11 12, 16 11 Q21 10, 22 16 Q23 20, 18 22 Q14 24, 11 21 Z" stroke-width="1.2" opacity="0.7"/>
+    <!-- inner contour -->
+    <path d="M13 18 Q13.5 14, 16 13.5 Q18.5 13, 19 16 Q19.5 18.5, 17 19.5 Q15 20.5, 13.5 19 Z" stroke-width="1.2" opacity="0.9"/>
+    <!-- peak dot -->
   </g>
+  <circle cx="16" cy="16" r="1.2" fill="#d1d9c7" opacity="0.9"/>
 </svg>

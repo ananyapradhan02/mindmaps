@@ -82,15 +82,15 @@ export default function TopoHero() {
     // y range kept to 18–72 (safe center band for any screen)
     const floatAnims = ["floatA", "floatB", "floatC"];
     const nodes = [
-      { l: "essays",         x: 22,  y: 20, size: 1.3, rot: -5,  delay: 0.0, href: "#archive" },
-      { l: "reading",        x: 138, y: 22, size: 1.2, rot: 4,   delay: 0.2, href: "#archive" },
-      { l: "photos",         x: 28,  y: 40, size: 1.1, rot: -3,  delay: 0.4, href: "#archive" },
-      { l: "music",          x: 135, y: 38, size: 1.2, rot: 5,   delay: 0.5, href: "#archive" },
-      { l: "art",            x: 24,  y: 60, size: 1.4, rot: -4,  delay: 0.7, href: "#archive" },
-      { l: "experiments",    x: 140, y: 58, size: 1.1, rot: 3,   delay: 0.9, href: "#archive" },
-      { l: "podcast",        x: 30,  y: 75, size: 1.2, rot: -2,  delay: 1.1, href: "#archive" },
-      { l: "working memory", x: 80,  y: 78, size: 0.9, rot: 2,   delay: 1.3, href: "#wm" },
-      { l: "about",          x: 132, y: 74, size: 1.1, rot: -3,  delay: 1.5, href: "#about" },
+      { l: "essays",         x: 30,  y: 18, size: 1.3, rot: -5,  delay: 0.0, href: "#archive" },
+      { l: "reading",        x: 130, y: 16, size: 1.2, rot: 4,   delay: 0.2, href: "#archive" },
+      { l: "photos",         x: 25,  y: 36, size: 1.1, rot: -3,  delay: 0.4, href: "#archive" },
+      { l: "music",          x: 132, y: 34, size: 1.2, rot: 5,   delay: 0.5, href: "#archive" },
+      { l: "art",            x: 28,  y: 54, size: 1.4, rot: -4,  delay: 0.7, href: "#archive" },
+      { l: "experiments",    x: 128, y: 56, size: 1.1, rot: 3,   delay: 0.9, href: "#archive" },
+      { l: "podcast",        x: 32,  y: 72, size: 1.2, rot: -2,  delay: 1.1, href: "#archive" },
+      { l: "working memory", x: 80,  y: 76, size: 0.9, rot: 2,   delay: 1.3, href: "#wm" },
+      { l: "about",          x: 126, y: 73, size: 1.1, rot: -3,  delay: 1.5, href: "#about" },
     ];
 
     // Animated connection lines between nearby nodes
@@ -175,7 +175,7 @@ export default function TopoHero() {
       <svg
         ref={svgRef}
         viewBox="0 0 160 90"
-        preserveAspectRatio="xMidYMid slice"
+        preserveAspectRatio="none"
       />
     </div>
   );

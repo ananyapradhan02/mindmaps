@@ -51,6 +51,7 @@ export default function SectionTopo({ seed, dark = false }: SectionTopoProps) {
       p.setAttribute("stroke", strokeColor);
       p.setAttribute("stroke-width", (0.1 + rand() * 0.25).toFixed(2));
       p.setAttribute("opacity", (baseOpacity * 0.7 + rand() * 0.05).toFixed(3));
+      p.style.animation = `gentlePulse ${8 + i * 3}s ease-in-out ${i * 1.5}s infinite`;
       svg.appendChild(p);
     }
 
@@ -66,6 +67,7 @@ export default function SectionTopo({ seed, dark = false }: SectionTopoProps) {
       c.setAttribute("r", (0.25 + rand() * 0.5).toFixed(2));
       c.setAttribute("fill", dotColor);
       c.setAttribute("opacity", (baseOpacity * 0.8 + rand() * 0.06).toFixed(3));
+      c.style.animation = `dotPulse ${4 + rand() * 6}s ease-in-out ${rand() * 3}s infinite`;
       svg.appendChild(c);
     }
 

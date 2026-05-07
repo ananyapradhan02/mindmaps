@@ -34,7 +34,7 @@ export default function Home() {
           <h1 className="font-[family-name:var(--font-serif)] text-[clamp(2.8rem,7vw,4.5rem)] font-normal leading-none tracking-tight text-sage-700 mb-5 animate-[fadeInUp_0.8s_ease-out_0.1s_both]">
             Mind Maps Collective
           </h1>
-          <p className="text-[15px] text-warm-gray leading-relaxed max-w-lg mx-auto animate-[fadeInUp_0.8s_ease-out_0.3s_both]">
+          <p className="font-[family-name:var(--font-serif)] font-light italic text-[16px] text-warm-gray leading-relaxed max-w-lg mx-auto animate-[fadeInUp_0.8s_ease-out_0.3s_both]">
             The branches of this mind map are still growing — a living archive of
             culture, creativity, and the systems we build (and live inside).
           </p>
@@ -47,11 +47,11 @@ export default function Home() {
         <SectionTopo seed={1} />
         <span className="margin-note left">technology × culture × meaning</span>
         <div className="inner">
-          <p className="text-warm-gray text-[0.7rem] tracking-[0.3em] uppercase mb-3">The Root</p>
+          <p className="font-[family-name:var(--font-serif)] italic text-warm-gray text-[0.75rem] tracking-[0.15em] mb-3">The Root</p>
           <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,4vw,2.4rem)] font-light text-warm-dark mb-6">
             Why this exists
           </h2>
-          <div className="text-[15px] text-warm-gray leading-relaxed space-y-4">
+          <div className="font-[family-name:var(--font-serif)] font-light text-[15px] text-warm-gray leading-relaxed space-y-4">
             <p>
               I&apos;m interested in the overlap of{" "}
               <strong className="text-warm-dark font-medium">technology × culture × meaning</strong>{" "}
@@ -74,12 +74,12 @@ export default function Home() {
         <SectionTopo seed={2} />
         <span className="margin-note right">building in public</span>
         <div className="inner">
-          <p className="text-warm-gray text-[0.7rem] tracking-[0.3em] uppercase mb-3">Right Now</p>
+          <p className="font-[family-name:var(--font-serif)] italic text-warm-gray text-[0.75rem] tracking-[0.15em] mb-3">Right Now</p>
           <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,4vw,2.4rem)] font-light text-warm-dark mb-6">
             Now
           </h2>
           <div className="border-l-2 border-sage-200 pl-5">
-            <ul className="list-none space-y-2.5 text-[15px] text-warm-gray">
+            <ul className="list-none space-y-2.5 font-[family-name:var(--font-serif)] font-light text-[15px] text-warm-gray leading-relaxed">
               <li>Building this repository into a home for durable writing.</li>
               <li>Writing toward culture, creativity, and the future of work & growth.</li>
               <li>Running small experiments: formats, outlines, and &quot;explain it like a map.&quot;</li>
@@ -94,34 +94,34 @@ export default function Home() {
       <section className="section-wrap" id="archive">
         <SectionTopo seed={3} />
         <div className="inner">
-          <p className="text-warm-gray text-[0.7rem] tracking-[0.3em] uppercase mb-3">Coming Soon</p>
+          <p className="font-[family-name:var(--font-serif)] italic text-warm-gray text-[0.75rem] tracking-[0.15em] mb-3">Coming Soon</p>
           <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,4vw,2.4rem)] font-light text-warm-dark mb-6">
             What you&apos;ll find here
           </h2>
           <div className="cards-grid">
             <div className="card">
               <h3 className="font-[family-name:var(--font-serif)] text-[1.4rem] text-warm-dark mb-2">Portrait Essays</h3>
-              <p className="text-warm-gray text-[0.85rem] leading-relaxed">People who defy neat categories</p>
+              <p className="font-[family-name:var(--font-serif)] font-light italic text-warm-gray text-[0.85rem] leading-relaxed">People who defy neat categories</p>
             </div>
             <div className="card">
               <h3 className="font-[family-name:var(--font-serif)] text-[1.4rem] text-warm-dark mb-2">Public Guides</h3>
-              <p className="text-warm-gray text-[0.85rem] leading-relaxed">Translating hidden knowledge into usable systems</p>
+              <p className="font-[family-name:var(--font-serif)] font-light italic text-warm-gray text-[0.85rem] leading-relaxed">Translating hidden knowledge into usable systems</p>
             </div>
             <div className="card">
               <h3 className="font-[family-name:var(--font-serif)] text-[1.4rem] text-warm-dark mb-2">Growth Playbooks</h3>
-              <p className="text-warm-gray text-[0.85rem] leading-relaxed">Positioning, narrative, GTM motions, distribution</p>
+              <p className="font-[family-name:var(--font-serif)] font-light italic text-warm-gray text-[0.85rem] leading-relaxed">Positioning, narrative, GTM motions, distribution</p>
             </div>
             <div className="card">
               <h3 className="font-[family-name:var(--font-serif)] text-[1.4rem] text-warm-dark mb-2">AI & Systems</h3>
-              <p className="text-warm-gray text-[0.85rem] leading-relaxed">Responsible storytelling about new tools</p>
+              <p className="font-[family-name:var(--font-serif)] font-light italic text-warm-gray text-[0.85rem] leading-relaxed">Responsible storytelling about new tools</p>
             </div>
             <div className="card">
               <h3 className="font-[family-name:var(--font-serif)] text-[1.4rem] text-warm-dark mb-2">Production Notes</h3>
-              <p className="text-warm-gray text-[0.85rem] leading-relaxed">Behind the writing, directing, and making</p>
+              <p className="font-[family-name:var(--font-serif)] font-light italic text-warm-gray text-[0.85rem] leading-relaxed">Behind the writing, directing, and making</p>
             </div>
             <div className="card">
               <h3 className="font-[family-name:var(--font-serif)] text-[1.4rem] text-warm-dark mb-2">Podcast Episodes</h3>
-              <p className="text-warm-gray text-[0.85rem] leading-relaxed">Conversations across disciplines</p>
+              <p className="font-[family-name:var(--font-serif)] font-light italic text-warm-gray text-[0.85rem] leading-relaxed">Conversations across disciplines</p>
             </div>
           </div>
         </div>
@@ -132,20 +132,20 @@ export default function Home() {
         <SectionTopo seed={4} />
         <span className="margin-note left">what compounds</span>
         <div className="inner text-center">
-          <p className="text-warm-gray text-[0.7rem] tracking-[0.3em] uppercase mb-3">The Archive</p>
+          <p className="font-[family-name:var(--font-serif)] italic text-warm-gray text-[0.75rem] tracking-[0.15em] mb-3">The Archive</p>
           <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,4vw,2.4rem)] font-light text-warm-dark mb-6">
             Working Memory
           </h2>
         </div>
         <div className="wm-box">
-          <p className="text-[15px] text-warm-gray leading-relaxed mb-4">
+          <p className="font-[family-name:var(--font-serif)] font-light text-[15px] text-warm-gray leading-relaxed mb-4">
             A structured knowledge repository — exploring how the best companies
             build writing culture as infrastructure. The tech and growth arm of this
             archive, in the tradition of great company handbooks.
           </p>
           <a
             href="/working-memory"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-warm-dark text-warm-white text-[0.85rem] tracking-wide rounded-full no-underline hover:bg-sage-800 transition-colors mt-2"
+            className="font-[family-name:var(--font-serif)] inline-flex items-center gap-2 px-6 py-3 bg-warm-dark text-warm-white text-[0.85rem] tracking-wide rounded-full no-underline hover:bg-sage-800 transition-colors mt-2"
           >
             Browse Issue 01: Repetition →
           </a>
@@ -156,7 +156,7 @@ export default function Home() {
       <section className="section-wrap">
         <SectionTopo seed={5} />
         <div className="inner">
-          <p className="text-warm-gray text-[0.7rem] tracking-[0.3em] uppercase mb-3">The Journey</p>
+          <p className="font-[family-name:var(--font-serif)] italic text-warm-gray text-[0.75rem] tracking-[0.15em] mb-3">The Journey</p>
           <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,4vw,2.4rem)] font-light text-warm-dark mb-6">
             Six issues ahead
           </h2>
@@ -177,7 +177,7 @@ export default function Home() {
                   {issue.title}
                 </h3>
                 {issue.status && (
-                  <span className="text-[0.65rem] tracking-[0.15em] uppercase text-terracotta">
+                  <span className="font-[family-name:var(--font-serif)] italic text-[0.7rem] tracking-[0.08em] text-terracotta">
                     {issue.status}
                   </span>
                 )}
@@ -192,11 +192,11 @@ export default function Home() {
         <SectionTopo seed={6} />
         <span className="margin-note right">ship end-to-end</span>
         <div className="inner">
-          <p className="text-warm-gray text-[0.7rem] tracking-[0.3em] uppercase mb-3">Collaborate</p>
+          <p className="font-[family-name:var(--font-serif)] italic text-warm-gray text-[0.75rem] tracking-[0.15em] mb-3">Collaborate</p>
           <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,4vw,2.4rem)] font-light text-warm-dark mb-6">
             Work, too
           </h2>
-          <div className="text-[15px] text-warm-gray leading-relaxed space-y-4">
+          <div className="font-[family-name:var(--font-serif)] font-light text-[15px] text-warm-gray leading-relaxed space-y-4">
             <p>
               I&apos;m a growth operator who ships end-to-end. I build with AI natively
               — research pipelines, content engines, agentic prototypes — across the
@@ -223,7 +223,7 @@ export default function Home() {
       <section className="section-wrap alt">
         <SectionTopo seed={8} />
         <div className="inner">
-          <p className="text-warm-gray text-[0.7rem] tracking-[0.3em] uppercase mb-3">Under the Bed</p>
+          <p className="font-[family-name:var(--font-serif)] italic text-warm-gray text-[0.75rem] tracking-[0.15em] mb-3">Under the Bed</p>
           <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,4vw,2.4rem)] font-light text-warm-dark mb-6">
             Maybe some day
           </h2>
@@ -243,16 +243,16 @@ export default function Home() {
           <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,4vw,2.4rem)] font-light text-sage-100 mb-4">
             Say hi
           </h2>
-          <p className="text-[15px] text-sage-400 leading-relaxed mb-6">
+          <p className="font-[family-name:var(--font-serif)] font-light text-[15px] text-sage-400 leading-relaxed mb-6">
             I&apos;m always looking for new music, new ideas, and new collaborators.
             Whether it&apos;s a project, a conversation, or a recommendation for something
             I should be reading — I&apos;d love to hear from you.
           </p>
           <div className="flex flex-wrap gap-6 mb-10">
-            <a href="mailto:ananyapradhan02@gmail.com" className="text-[15px] text-sage-300 no-underline border-b border-sage-700 pb-0.5 hover:text-sage-100 hover:border-sage-500 transition-all">Email</a>
-            <a href="https://www.linkedin.com/in/anyapradhan" target="_blank" rel="noopener" className="text-[15px] text-sage-300 no-underline border-b border-sage-700 pb-0.5 hover:text-sage-100 hover:border-sage-500 transition-all">LinkedIn</a>
-            <a href="https://x.com/ananyakin" target="_blank" rel="noopener" className="text-[15px] text-sage-300 no-underline border-b border-sage-700 pb-0.5 hover:text-sage-100 hover:border-sage-500 transition-all">Twitter / X</a>
-            <a href="https://mindmaps.substack.com/" target="_blank" rel="noopener" className="text-[15px] text-sage-300 no-underline border-b border-sage-700 pb-0.5 hover:text-sage-100 hover:border-sage-500 transition-all">Substack</a>
+            <a href="mailto:ananyapradhan02@gmail.com" className="font-[family-name:var(--font-serif)] font-light text-[15px] text-sage-300 no-underline border-b border-sage-700 pb-0.5 hover:text-sage-100 hover:border-sage-500 transition-all">Email</a>
+            <a href="https://www.linkedin.com/in/anyapradhan" target="_blank" rel="noopener" className="font-[family-name:var(--font-serif)] font-light text-[15px] text-sage-300 no-underline border-b border-sage-700 pb-0.5 hover:text-sage-100 hover:border-sage-500 transition-all">LinkedIn</a>
+            <a href="https://x.com/ananyakin" target="_blank" rel="noopener" className="font-[family-name:var(--font-serif)] font-light text-[15px] text-sage-300 no-underline border-b border-sage-700 pb-0.5 hover:text-sage-100 hover:border-sage-500 transition-all">Twitter / X</a>
+            <a href="https://mindmaps.substack.com/" target="_blank" rel="noopener" className="font-[family-name:var(--font-serif)] font-light text-[15px] text-sage-300 no-underline border-b border-sage-700 pb-0.5 hover:text-sage-100 hover:border-sage-500 transition-all">Substack</a>
           </div>
           <div className="font-[family-name:var(--font-serif)] italic text-sm text-sage-500 pt-6 border-t border-sage-800">
             Mind Maps Collective — an archive in motion.

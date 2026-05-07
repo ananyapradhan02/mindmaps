@@ -93,9 +93,11 @@ export default function TopoHero() {
       const p = document.createElementNS(ns, "path");
       p.setAttribute("d", d);
       p.setAttribute("fill", "none");
-      p.setAttribute("stroke", topoColors[ring]);
-      p.setAttribute("stroke-width", ring % 4 === 0 ? "0.3" : "0.15");
-      p.setAttribute("opacity", (0.12 + (ring % 3 === 0 ? 0.08 : 0)).toString());
+      const color = topoColors[ring];
+      const isAccent = color !== "#8fa47a" && color !== "#b3c0a1";
+      p.setAttribute("stroke", color);
+      p.setAttribute("stroke-width", isAccent ? "0.35" : (ring % 4 === 0 ? "0.3" : "0.15"));
+      p.setAttribute("opacity", isAccent ? "0.25" : (0.12 + (ring % 3 === 0 ? 0.08 : 0)).toString());
       p.style.animation = `gentlePulse ${6 + (ring % 4) * 2}s ease-in-out ${ring * 0.15}s infinite`;
       svg.appendChild(p);
     }

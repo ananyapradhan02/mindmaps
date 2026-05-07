@@ -14,44 +14,42 @@ export default function TopoHero() {
 
     const cx = 50, cy = 50;
 
-    // Inject keyframe styles for floating + hover
+    // Inject keyframe styles
     const styleEl = document.createElementNS(ns, "style");
     styleEl.textContent = `
-      @keyframes floatLabel {
+      @keyframes floatA {
         0%, 100% { transform: translate(0, 0); }
-        33% { transform: translate(0.4px, -0.6px); }
-        66% { transform: translate(-0.3px, 0.4px); }
+        25% { transform: translate(0.5px, -0.8px); }
+        50% { transform: translate(-0.3px, 0.5px); }
+        75% { transform: translate(0.6px, 0.3px); }
       }
-      .topo-label {
-        cursor: pointer;
-        transition: opacity 0.3s ease, font-size 0.3s ease;
+      @keyframes floatB {
+        0%, 100% { transform: translate(0, 0); }
+        30% { transform: translate(-0.6px, 0.4px); }
+        60% { transform: translate(0.4px, -0.7px); }
       }
-      .topo-label:hover {
-        opacity: 0.9 !important;
+      @keyframes floatC {
+        0%, 100% { transform: translate(0, 0); }
+        40% { transform: translate(0.3px, 0.6px); }
+        70% { transform: translate(-0.5px, -0.4px); }
       }
-      .topo-dot {
-        transition: r 0.3s ease, opacity 0.3s ease;
+      @keyframes breathe {
+        0%, 100% { opacity: 0.06; }
+        50% { opacity: 0.14; }
       }
-      .topo-label:hover ~ .topo-dot,
-      .topo-dot:hover {
-        opacity: 0.7;
+      @keyframes lineDraw {
+        from { stroke-dashoffset: 8; }
+        to { stroke-dashoffset: 0; }
       }
-      .topo-node:hover .topo-label {
-        opacity: 0.9 !important;
-      }
-      .topo-node:hover .topo-dot {
-        opacity: 0.6 !important;
-      }
-      .topo-node:hover .topo-ring {
-        opacity: 0.5 !important;
-      }
-      .topo-node {
-        cursor: pointer;
-      }
+      .topo-node { cursor: pointer; }
+      .topo-node:hover .topo-label { opacity: 0.85 !important; }
+      .topo-node:hover .topo-dot { opacity: 0.7 !important; }
+      .topo-node:hover .topo-ring { opacity: 0.2 !important; }
+      .topo-label { cursor: pointer; transition: opacity 0.3s ease; }
     `;
     svg.appendChild(styleEl);
 
-    // Contour rings
+    // Contour rings — living, breathing
     for (let ring = 0; ring < 18; ring++) {
       const baseR = 4 + ring * 5.5;
       const seg = 64;
@@ -79,87 +77,89 @@ export default function TopoHero() {
       svg.appendChild(p);
     }
 
-    // Nav labels scattered across the map — matching the nav bar
+    // Scattered nav labels — smaller, tighter to fit first fold
+    const floatAnims = ["floatA", "floatB", "floatC"];
     const nodes = [
-      { l: "essays",         x: 22, y: 26, size: 2.4, rot: -8,  delay: 0.0, href: "#archive" },
-      { l: "reading",        x: 78, y: 24, size: 2.0, rot: 5,   delay: 0.3, href: "#archive" },
-      { l: "photos",         x: 15, y: 48, size: 1.9, rot: -3,  delay: 0.6, href: "#archive" },
-      { l: "music",          x: 83, y: 45, size: 2.1, rot: 7,   delay: 0.9, href: "#archive" },
-      { l: "art",            x: 35, y: 68, size: 2.6, rot: -5,  delay: 1.2, href: "#archive" },
-      { l: "experiments",    x: 72, y: 70, size: 1.8, rot: 4,   delay: 1.5, href: "#archive" },
-      { l: "podcast",        x: 50, y: 82, size: 2.0, rot: -2,  delay: 1.8, href: "#archive" },
-      { l: "working memory", x: 25, y: 85, size: 1.5, rot: 3,   delay: 2.1, href: "#wm" },
-      { l: "about",          x: 78, y: 84, size: 1.7, rot: -4,  delay: 2.4, href: "#about" },
+      { l: "essays",         x: 18, y: 20, size: 1.6, rot: -6,  delay: 0.0, href: "#archive" },
+      { l: "reading",        x: 82, y: 18, size: 1.4, rot: 4,   delay: 0.2, href: "#archive" },
+      { l: "photos",         x: 10, y: 42, size: 1.3, rot: -3,  delay: 0.4, href: "#archive" },
+      { l: "music",          x: 88, y: 40, size: 1.5, rot: 5,   delay: 0.5, href: "#archive" },
+      { l: "art",            x: 24, y: 60, size: 1.7, rot: -4,  delay: 0.7, href: "#archive" },
+      { l: "experiments",    x: 76, y: 62, size: 1.3, rot: 3,   delay: 0.9, href: "#archive" },
+      { l: "podcast",        x: 14, y: 78, size: 1.4, rot: -2,  delay: 1.1, href: "#archive" },
+      { l: "working memory", x: 50, y: 80, size: 1.1, rot: 2,   delay: 1.3, href: "#wm" },
+      { l: "about",          x: 86, y: 76, size: 1.3, rot: -3,  delay: 1.5, href: "#about" },
     ];
 
-    // Connection lines between nearby nodes
+    // Animated connection lines between nearby nodes
     for (let i = 0; i < nodes.length; i++) {
       for (let j = i + 1; j < nodes.length; j++) {
         const a = nodes[i], b = nodes[j];
         const dist = Math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2);
-        if (dist < 40) {
+        if (dist < 45) {
           const mx = (a.x + b.x) / 2 + (Math.sin(i * 3 + j) * 8);
           const my = (a.y + b.y) / 2 + (Math.cos(i * 2 + j) * 6);
           const p = document.createElementNS(ns, "path");
           p.setAttribute("d", `M ${a.x} ${a.y} Q ${mx} ${my} ${b.x} ${b.y}`);
           p.setAttribute("fill", "none");
           p.setAttribute("stroke", "var(--sage-300)");
-          p.setAttribute("stroke-width", "0.12");
-          p.setAttribute("opacity", "0.18");
-          p.setAttribute("stroke-dasharray", "1 2");
+          p.setAttribute("stroke-width", "0.1");
+          p.setAttribute("opacity", "0.15");
+          p.setAttribute("stroke-dasharray", "1.5 2");
+          p.style.animation = `lineDraw ${3 + i}s linear ${0.5 + i * 0.3}s infinite`;
           svg.appendChild(p);
         }
       }
     }
 
-    // Render nodes as text labels with dots and hover groups
+    // Render nodes
     nodes.forEach((n, idx) => {
       const g = document.createElementNS(ns, "g");
       g.setAttribute("class", "topo-node");
-      g.style.animation = `floatLabel ${5 + (idx % 3) * 2}s ease-in-out ${n.delay}s infinite`;
+      const anim = floatAnims[idx % 3];
+      g.style.animation = `${anim} ${6 + (idx % 4) * 2}s ease-in-out ${n.delay}s infinite`;
 
-      // Soft ring behind label
+      // Breathing ring behind label
       const ring = document.createElementNS(ns, "circle");
       ring.setAttribute("cx", String(n.x));
       ring.setAttribute("cy", String(n.y));
-      ring.setAttribute("r", String(n.size * 2.5));
+      ring.setAttribute("r", String(n.size * 3));
       ring.setAttribute("fill", "var(--sage-200)");
-      ring.setAttribute("opacity", "0.08");
+      ring.setAttribute("opacity", "0.06");
       ring.setAttribute("class", "topo-ring");
+      ring.style.animation = `breathe ${4 + idx * 0.7}s ease-in-out ${n.delay}s infinite`;
       g.appendChild(ring);
 
-      // Small dot at node center
+      // Dot
       const dot = document.createElementNS(ns, "circle");
       dot.setAttribute("cx", String(n.x));
-      dot.setAttribute("cy", String(n.y - 1));
-      dot.setAttribute("r", "0.5");
+      dot.setAttribute("cy", String(n.y - 0.8));
+      dot.setAttribute("r", "0.4");
       dot.setAttribute("fill", "var(--sage-500)");
-      dot.setAttribute("opacity", "0.35");
+      dot.setAttribute("opacity", "0.3");
       dot.setAttribute("class", "topo-dot");
       g.appendChild(dot);
 
-      // Text label
+      // Text label — smaller fonts
       const t = document.createElementNS(ns, "text");
       t.setAttribute("x", String(n.x));
-      t.setAttribute("y", String(n.y + 1.2));
+      t.setAttribute("y", String(n.y + 1));
       t.setAttribute("text-anchor", "middle");
       t.setAttribute("fill", "var(--sage-600)");
-      t.setAttribute("opacity", "0.5");
+      t.setAttribute("opacity", "0.45");
       t.setAttribute("font-size", String(n.size));
       t.setAttribute("font-family", "var(--font-serif), Georgia, serif");
       t.setAttribute("font-style", "italic");
-      t.setAttribute("letter-spacing", "0.08em");
+      t.setAttribute("letter-spacing", "0.06em");
       t.setAttribute("class", "topo-label");
       if (n.rot !== 0) {
         t.setAttribute("transform", `rotate(${n.rot} ${n.x} ${n.y})`);
       }
-      // Fade in with stagger
       t.style.opacity = "0";
-      t.style.animation = `fadeInUp 0.8s ease-out ${0.5 + n.delay}s forwards`;
+      t.style.animation = `fadeInUp 0.6s ease-out ${0.3 + n.delay}s forwards`;
       t.textContent = n.l;
       g.appendChild(t);
 
-      // Click handler for the whole group
       g.onclick = () => {
         document.querySelector(n.href)?.scrollIntoView({ behavior: "smooth" });
       };

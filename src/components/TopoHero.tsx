@@ -80,15 +80,15 @@ export default function TopoHero() {
     // Scattered nav labels — smaller, tighter to fit first fold
     const floatAnims = ["floatA", "floatB", "floatC"];
     const nodes = [
-      { l: "essays",         x: 18, y: 20, size: 1.6, rot: -6,  delay: 0.0, href: "#archive" },
-      { l: "reading",        x: 82, y: 18, size: 1.4, rot: 4,   delay: 0.2, href: "#archive" },
-      { l: "photos",         x: 10, y: 42, size: 1.3, rot: -3,  delay: 0.4, href: "#archive" },
-      { l: "music",          x: 88, y: 40, size: 1.5, rot: 5,   delay: 0.5, href: "#archive" },
-      { l: "art",            x: 24, y: 60, size: 1.7, rot: -4,  delay: 0.7, href: "#archive" },
-      { l: "experiments",    x: 76, y: 62, size: 1.3, rot: 3,   delay: 0.9, href: "#archive" },
-      { l: "podcast",        x: 14, y: 78, size: 1.4, rot: -2,  delay: 1.1, href: "#archive" },
-      { l: "working memory", x: 50, y: 80, size: 1.1, rot: 2,   delay: 1.3, href: "#wm" },
-      { l: "about",          x: 86, y: 76, size: 1.3, rot: -3,  delay: 1.5, href: "#about" },
+      { l: "essays",         x: 22, y: 18, size: 1.4, rot: -5,  delay: 0.0, href: "#archive" },
+      { l: "reading",        x: 75, y: 16, size: 1.3, rot: 4,   delay: 0.2, href: "#archive" },
+      { l: "photos",         x: 16, y: 40, size: 1.2, rot: -3,  delay: 0.4, href: "#archive" },
+      { l: "music",          x: 82, y: 38, size: 1.3, rot: 5,   delay: 0.5, href: "#archive" },
+      { l: "art",            x: 20, y: 62, size: 1.5, rot: -4,  delay: 0.7, href: "#archive" },
+      { l: "experiments",    x: 78, y: 64, size: 1.2, rot: 3,   delay: 0.9, href: "#archive" },
+      { l: "podcast",        x: 18, y: 80, size: 1.3, rot: -2,  delay: 1.1, href: "#archive" },
+      { l: "working memory", x: 50, y: 84, size: 1.0, rot: 2,   delay: 1.3, href: "#wm" },
+      { l: "about",          x: 80, y: 82, size: 1.2, rot: -3,  delay: 1.5, href: "#about" },
     ];
 
     // Animated connection lines between nearby nodes

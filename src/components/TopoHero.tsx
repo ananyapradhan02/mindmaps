@@ -12,7 +12,8 @@ export default function TopoHero() {
     if (!svg) return;
     svg.innerHTML = "";
 
-    const cx = 50, cy = 50;
+    // Wide viewBox (16:9-ish) so "slice" barely crops on typical screens
+    const cx = 80, cy = 45;
 
     // Inject keyframe styles
     const styleEl = document.createElementNS(ns, "style");
@@ -49,7 +50,7 @@ export default function TopoHero() {
     `;
     svg.appendChild(styleEl);
 
-    // Contour rings — living, breathing
+    // Contour rings — living, breathing (scaled for wider viewBox)
     for (let ring = 0; ring < 18; ring++) {
       const baseR = 4 + ring * 5.5;
       const seg = 64;
@@ -77,18 +78,19 @@ export default function TopoHero() {
       svg.appendChild(p);
     }
 
-    // Scattered nav labels — smaller, tighter to fit first fold
+    // All 9 labels scattered across the wide canvas
+    // y range kept to 18–72 (safe center band for any screen)
     const floatAnims = ["floatA", "floatB", "floatC"];
     const nodes = [
-      { l: "essays",         x: 30, y: 22, size: 1.3, rot: -5,  delay: 0.0, href: "#archive" },
-      { l: "reading",        x: 70, y: 20, size: 1.2, rot: 4,   delay: 0.2, href: "#archive" },
-      { l: "photos",         x: 27, y: 38, size: 1.1, rot: -3,  delay: 0.4, href: "#archive" },
-      { l: "music",          x: 73, y: 36, size: 1.2, rot: 5,   delay: 0.5, href: "#archive" },
-      { l: "art",            x: 30, y: 58, size: 1.4, rot: -4,  delay: 0.7, href: "#archive" },
-      { l: "experiments",    x: 72, y: 60, size: 1.1, rot: 3,   delay: 0.9, href: "#archive" },
-      { l: "podcast",        x: 28, y: 76, size: 1.2, rot: -2,  delay: 1.1, href: "#archive" },
-      { l: "working memory", x: 50, y: 80, size: 0.9, rot: 2,   delay: 1.3, href: "#wm" },
-      { l: "about",          x: 72, y: 78, size: 1.1, rot: -3,  delay: 1.5, href: "#about" },
+      { l: "essays",         x: 22,  y: 20, size: 1.3, rot: -5,  delay: 0.0, href: "#archive" },
+      { l: "reading",        x: 138, y: 22, size: 1.2, rot: 4,   delay: 0.2, href: "#archive" },
+      { l: "photos",         x: 28,  y: 40, size: 1.1, rot: -3,  delay: 0.4, href: "#archive" },
+      { l: "music",          x: 135, y: 38, size: 1.2, rot: 5,   delay: 0.5, href: "#archive" },
+      { l: "art",            x: 24,  y: 60, size: 1.4, rot: -4,  delay: 0.7, href: "#archive" },
+      { l: "experiments",    x: 140, y: 58, size: 1.1, rot: 3,   delay: 0.9, href: "#archive" },
+      { l: "podcast",        x: 30,  y: 75, size: 1.2, rot: -2,  delay: 1.1, href: "#archive" },
+      { l: "working memory", x: 80,  y: 78, size: 0.9, rot: 2,   delay: 1.3, href: "#wm" },
+      { l: "about",          x: 132, y: 74, size: 1.1, rot: -3,  delay: 1.5, href: "#about" },
     ];
 
     // Animated connection lines between nearby nodes
@@ -96,7 +98,7 @@ export default function TopoHero() {
       for (let j = i + 1; j < nodes.length; j++) {
         const a = nodes[i], b = nodes[j];
         const dist = Math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2);
-        if (dist < 45) {
+        if (dist < 60) {
           const mx = (a.x + b.x) / 2 + (Math.sin(i * 3 + j) * 8);
           const my = (a.y + b.y) / 2 + (Math.cos(i * 2 + j) * 6);
           const p = document.createElementNS(ns, "path");
@@ -172,7 +174,7 @@ export default function TopoHero() {
     <div className="topo-bg">
       <svg
         ref={svgRef}
-        viewBox="0 0 100 100"
+        viewBox="0 0 160 90"
         preserveAspectRatio="xMidYMid slice"
       />
     </div>

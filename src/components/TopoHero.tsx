@@ -91,6 +91,7 @@ export default function TopoHero() {
       { l: "podcast",        x: 32,  y: 72, size: 1.2, rot: -2,  delay: 1.1, href: "#archive" },
       { l: "working memory", x: 80,  y: 76, size: 0.9, rot: 2,   delay: 1.3, href: "#wm" },
       { l: "lore",           x: 126, y: 73, size: 1.1, rot: -3,  delay: 1.5, href: "#lore" },
+      { l: "play",           x: 80,  y: 18, size: 1.2, rot: 3,   delay: 1.7, href: "#archive" },
     ];
 
     // Animated connection lines between nearby nodes

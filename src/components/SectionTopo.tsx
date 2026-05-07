@@ -85,7 +85,7 @@ export default function SectionTopo({ seed, dark = false }: SectionTopoProps) {
             "d",
             `M ${points[i].x} ${points[i].y} Q ${mx} ${my} ${points[j].x} ${points[j].y}`
           );
-          l.setAttribute("stroke", strokeColor);
+          l.setAttribute("stroke", sectionColors[(i + j) % sectionColors.length]);
           l.setAttribute("fill", "none");
           l.setAttribute("stroke-width", "0.1");
           l.setAttribute("opacity", (baseOpacity * 0.5).toFixed(3));

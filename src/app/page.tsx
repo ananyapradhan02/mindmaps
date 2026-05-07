@@ -15,11 +15,12 @@ export default function Home() {
           mindmaps
         </a>
         <div className="flex gap-8">
-          <a href="#archive" className="text-[0.85rem] tracking-widest text-warm-gray no-underline hover:text-sage-600 transition-colors">writing</a>
+          <a href="#archive" className="text-[0.85rem] tracking-widest text-warm-gray no-underline hover:text-sage-600 transition-colors">essays</a>
           <a href="#archive" className="text-[0.85rem] tracking-widest text-warm-gray no-underline hover:text-sage-600 transition-colors">reading</a>
           <a href="#archive" className="text-[0.85rem] tracking-widest text-warm-gray no-underline hover:text-sage-600 transition-colors">photos</a>
           <a href="#archive" className="text-[0.85rem] tracking-widest text-warm-gray no-underline hover:text-sage-600 transition-colors">music</a>
-          <a href="#archive" className="text-[0.85rem] tracking-widest text-warm-gray no-underline hover:text-sage-600 transition-colors">projects</a>
+          <a href="#archive" className="text-[0.85rem] tracking-widest text-warm-gray no-underline hover:text-sage-600 transition-colors">art</a>
+          <a href="#archive" className="text-[0.85rem] tracking-widest text-warm-gray no-underline hover:text-sage-600 transition-colors">experiments</a>
           <a href="#archive" className="text-[0.85rem] tracking-widest text-warm-gray no-underline hover:text-sage-600 transition-colors">podcast</a>
           <a href="#wm" className="text-[0.85rem] tracking-widest text-warm-gray no-underline hover:text-sage-600 transition-colors">working memory</a>
           <a href="#about" className="text-[0.85rem] tracking-widest text-warm-gray no-underline hover:text-sage-600 transition-colors">about</a>

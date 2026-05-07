@@ -23,7 +23,7 @@ export default function Home() {
           <a href="#archive" className="text-[0.85rem] tracking-widest text-warm-gray no-underline hover:text-sage-600 transition-colors">experiments</a>
           <a href="#archive" className="text-[0.85rem] tracking-widest text-warm-gray no-underline hover:text-sage-600 transition-colors">podcast</a>
           <a href="#wm" className="text-[0.85rem] tracking-widest text-warm-gray no-underline hover:text-sage-600 transition-colors">working memory</a>
-          <a href="#about" className="text-[0.85rem] tracking-widest text-warm-gray no-underline hover:text-sage-600 transition-colors">about</a>
+          <a href="#lore" className="text-[0.85rem] tracking-widest text-warm-gray no-underline hover:text-sage-600 transition-colors">lore</a>
         </div>
       </nav>
 
@@ -43,7 +43,7 @@ export default function Home() {
       </section>
 
       {/* ─── WHY THIS EXISTS ─── */}
-      <section className="section-wrap" id="about">
+      <section className="section-wrap" id="lore">
         <SectionTopo seed={1} />
         <span className="margin-note left">technology × culture × meaning</span>
         <div className="inner">

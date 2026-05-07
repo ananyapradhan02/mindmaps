@@ -62,7 +62,7 @@ a:hover {
   text-decoration-color: var(--sage-600);
 }
 
-/* ─── NAV — Fraunces italic links ─── */
+/* ─── NAV ─── */
 nav {
   position: fixed;
   top: 0;
@@ -75,12 +75,6 @@ nav {
   justify-content: space-between;
   backdrop-filter: blur(8px);
   background: rgba(250, 248, 245, 0.7);
-}
-nav a:not(:first-child) {
-  font-family: var(--font-serif), Georgia, serif;
-  font-weight: 300;
-  font-style: italic;
-  letter-spacing: 0.02em;
 }
 
 /* ─── HERO ─── */
@@ -111,28 +105,27 @@ nav a:not(:first-child) {
   height: 100%;
   animation: contourDrift 30s ease-in-out infinite;
 }
-.topo-bg svg .topo-node { cursor: pointer; }
-.topo-bg svg .topo-label {
+.topo-bg svg text.node-label {
   cursor: pointer;
-  transition: opacity 0.3s;
+  transition: opacity 0.2s;
   pointer-events: all;
 }
-.topo-bg svg .topo-node:hover .topo-label { opacity: 0.9 !important; }
-.topo-bg svg .topo-node:hover .topo-dot { opacity: 0.6 !important; }
-.topo-bg svg .topo-node:hover .topo-ring { opacity: 0.5 !important; }
+.topo-bg svg text.node-label:hover { opacity: 0.8 !important; }
+.topo-bg svg circle.node-ring {
+  pointer-events: all;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.topo-bg svg circle.node-ring:hover { opacity: 0.4 !important; }
 
-/* ─── SECTION BACKGROUNDS — animated ─── */
+/* ─── SECTION BACKGROUNDS ─── */
 .section-topo {
   position: absolute;
   inset: 0;
   overflow: hidden;
   pointer-events: none;
 }
-.section-topo svg {
-  width: 100%;
-  height: 100%;
-  animation: sectionDrift 40s ease-in-out infinite;
-}
+.section-topo svg { width: 100%; height: 100%; }
 
 /* ─── SECTIONS ─── */
 .section-wrap {
@@ -268,22 +261,6 @@ nav a:not(:first-child) {
 @keyframes gentlePulse {
   0%, 100% { opacity: 0.4; }
   50% { opacity: 0.7; }
-}
-@keyframes sectionDrift {
-  0% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(-3px, 2px) scale(1.005); }
-  50% { transform: translate(2px, -3px) scale(1.01); }
-  75% { transform: translate(-1px, 3px) scale(1.005); }
-  100% { transform: translate(0, 0) scale(1); }
-}
-@keyframes floatLabel {
-  0%, 100% { transform: translate(0, 0); }
-  33% { transform: translate(0.4px, -0.6px); }
-  66% { transform: translate(-0.3px, 0.4px); }
-}
-@keyframes dotPulse {
-  0%, 100% { opacity: 0.08; }
-  50% { opacity: 0.15; }
 }
 
 /* ─── RESPONSIVE ─── */
